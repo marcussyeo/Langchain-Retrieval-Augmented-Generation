@@ -2,6 +2,8 @@
 
 ### Using LangChain and OpenAI
 
+> You would need an OpenAI API key - https://platform.openai.com/docs/quickstart?context=python
+
 1. Install dependencies
 
 ```
@@ -9,7 +11,8 @@ pip install -r requirements.txt
 ```
 
 2. Dump your PDF files into the data folder
-3. Adjust the chunk_size and chunk_overlap under create_database.py
+3. Store your OpenAI API key in a **.env** file
+4. Adjust the chunk_size and chunk_overlap under create_database.py
 
 ```python
 def split_text(documents):
@@ -21,13 +24,13 @@ def split_text(documents):
     )
 ```
 
-4. Create the Chroma DB
+5. Create the Chroma DB
 
 ```
 python create_database.py
 ```
 
-5. Query the Chroma DB
+6. Query the Chroma DB
 
 ```
 python query_data.py "What projects have he done so far?"
